@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+ <head>
+<meta charset="utf-8">
+<title>
+</title>
+</head>
+
+<body>
+<h1>我的第一个发布到GitHub上的js页面 </h1>
+<p>今天早早起来看js教程，神清气爽 </p>
+<script>
+window.alert( 欢迎来到召唤师峡谷，哈哈😄);
+</script>
+
+</body>
+</html>
