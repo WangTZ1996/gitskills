@@ -1,0 +1,26 @@
+
+function fib(num) {											//这是一个求斐波那契数列前n项并把前n项放入一个数组里的函数
+        var arr = [];													//声明一个空的数组
+        if(num == 1){												//第一种情况当n为1时，斐波那契数组也只有1
+            return arr = [1];
+        }
+        else if(num == 2){										//当n为2时，由于前两项都是1，就预先设置前两种情况
+            return arr = [1,1];
+        }
+        else{
+            arr = [1,1];												//当n大于3时，数组的前两项也是预先给出
+            var a=1;													//声明3个变量，用这三个变量来构建斐波那契数组
+            var b=1;
+            var c=2;
+            var arrlen =arr.length;
+            for(var i=2;i<num;i++){							//从3开始到给定的n结束的for循环
+                arr.push(c);											//把运算后生成的新的项加入到数组的尾部
+                a=b;														//这三行实现斐波那契数列，即用前两项相加得到第三项
+                b=c;
+                c=a+b;
+            }
+            return arr;												//返回生成的斐波那契数组
+
+        }
+			arr.reduce(function(pre,cur){return pre+cur});      //使用reduce（）方法将得到的斐波那契数组求和
+    }
