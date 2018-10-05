@@ -4,4 +4,44 @@ function isPalindrome(s){               //判断是否为回文串
 							      原来相反的数组放入一个字符串。
             return rev===s;				    //判断原来的s字符串和后生成的rev字符串是否相等，如果结果
 							      返回true那么证明s字符串是回文字符串，因为回文字符串倒过来								     和正向是一样的（无论字符串里的元素个数是基数还是偶数）
-        
+     
+
+
+
+
+---------------------------------------------------------------------------------------------------------------  
+function longestPalindrome(str){
+			'use strict';         	//用到let声明关键字就要先引入use strict
+            let palindromeStr="";               //用let关键字声明变量，用于记录最长回文串
+            let tempPalindrome="";              //记录当前回文串
+
+            for(let i=0;i<str.length;i++){      //i记录当前遍历字符串的开始位置，循环依次向后遍历
+
+                tempPalindrome="";              //每次新的一轮开始时，将临时记录回文串的变量清空
+
+                for(let j=i;j<str.length;j++){  //每次开始循环是以当前i所在的下标位置为开始遍历字符串的起始位置，直到遍 						历到结束位置，随着外层循环i的增加j不断向后移
+
+                    tempPalindrome+=str.charAt(j);  //逐个增加字符串的长度 tempPalindrome=tempPalindrome+str.charAt(j)
+
+                    if(isPalindrome(tempPalindrome) && tempPalindrome.length>palindromeStr.length){         //将当前的                                                                                                             字符串传入i														sPalindrome进														行回文判断，														如果是回文													串，则判断当前回文													串长度是否大于之													前记录的最长回文													串的长度，如果														大于之前的回文												串，则更新之前的记录即可
+
+                        palindromeStr=tempPalindrome;       //更新回文串
+
+                    }
+                }
+            }
+
+            return palindromeStr;               //返回最终的最长的回文串
+
+        }
+
+        function isPalindrome(s){               //判断是否为回文串
+            let rev=s.split('').reverse().join('');         //字符串逆转操作
+            return rev===s;
+        } 
+
+
+	我的分析：这段代码大致思想是运用动态划归的方法，首先将整个字符串用两层的for循环遍历一边，截取出整个长字符串里
+面的每一段字符串，再将每一段截取出来的字符串都用isPanlidrome（）方法验证一下是否是回文字符串，并将临时字符串与目前最长
+的回文字符串进行长度比较，如果临时字符串是回文字符串且比已有的最长回文字符串长，则把临时字符串里的对象赋值给最长回文字
+符串，这样就更新了最长字符串并保证PalindromeStr变量里的值是所有可能性中最长的回文字符串。
