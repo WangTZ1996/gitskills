@@ -1,19 +1,47 @@
-function functionName ( arr ){
-	var p;
-	for ( var i=1 ; i < arr.length ; i++ ){
-		for ( var j=i-1; j >= 0; j--){
- 			if( arr[j+1]<arr[j]){
-				p = arr[j+1];
-				arr[j+1] = arr[j];
-				arr[j] = p;
-			}else if (arr[j+1]>=arr[j]){
-				break;
-				}	
-		}
-	}
-	return arr;
 
-}
 
 //插入排序
+
+function insertSort(arr){
+	for (var i = 1;i < arr.length;i++){
+		for (var j = i;j > 0;j--){
+			var temp = arr[j];
+			if (arr[j] < arr[j-1]){
+					arr[j-1] = arr[j];
+					arr[j] = temp;
+                }
+        }
+    }
+	return arr;
+}
+
+
+//冒泡排序
+
+function bubbling(arr){
+	for (var i=arr.length;i > 0;i --){
+		for (var j = 0;j < i;j ++){
+			if (arr[j] < arr[j-1]){
+				var temp = arr[j];
+				arr[j] = arr[j-1];
+				arr[j-1] = temp;
+			}
+		}
+
+	}
+	return arr;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
