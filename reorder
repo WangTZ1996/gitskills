@@ -34,7 +34,24 @@ function bubbling(arr){
 
 
 
+//选择排序
 
+function selectionSort(arr) {
+	for (var i = 0;i < arr.length-1;i++){
+		var k = i;
+		for (var j = k+1;j < arr.length;j++){
+			if (arr[j] < arr[k]){
+				k = j;
+			}
+		}
+		if (i!=k){	var temp = arr[i];
+					arr[i] = arr[k];
+					arr[k] = temp;
+			
+		}
+	}
+	return arr;
+}
 
 
 
